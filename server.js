@@ -17,7 +17,7 @@ app.use(middleware.logger);
 // req = request made by the user 
 // res = what we want to send back
 app.get('/about', middleware.requireAuthentication, function(req, res){
-	res.send('Najib is the best bitch in the world');
+	res.send('Najib is the best bitch in the world!');
 });
 
 app.use(express.static(__dirname + '/public'));
