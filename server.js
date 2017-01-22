@@ -1,18 +1,8 @@
 var express = require('express');
 var app = express();
 var PORT = 3000;
+var middleware = require('./middleware.js')
 
-var middleware = {
-	requireAuthentication: function(req, res, next){
-		console.log('private route hit!');
-		next();
-	},
-	logger: function(req, res, next){
-		var date = new Date().toString();
-		console.log('Request: ' + req.method + ' ' + req.originalUrl + ' time: ' + date);
-		next();
-	}
-}
 app.use(middleware.logger);
 // req = request made by the user 
 // res = what we want to send back
